@@ -1,8 +1,8 @@
-SteelEye Frontend
-1. Explain what the simple List component does.
+# SteelEye Frontend
+ ## 1. Explain what the simple List component does.
 The simple List component is a React component that takes an array of items as a prop and renders a list of those items with the ability to select an item from the list. It consists of two nested components: SingleListItem and ListComponent. SingleListItem is responsible for rendering a single list item, while ListComponent is responsible for rendering the entire list by mapping over the items array and rendering a SingleListItem for each item.
 
-2. What problems / warnings are there with code?
+## 2. What problems / warnings are there with code?
 In the WrappedSingleListItem, the onClickHandler is not being invoked properly. Instead of being called when the list item is clicked, the onClickHandler is being called immediately when the component is rendered.
 onClick={onClickHandler(index)}
 
@@ -18,9 +18,8 @@ PropTypes.array(PropTypes.shapeOf({...}))
 The items in WrappedListComponent.defaultProps cannot be null. They must have an array of elements.
 WrappedListComponent.defaultProps = { items: null, };
 
-3. Please fix, optimize, and/or modify the component as much as you think is necessary.
-
-import React, { useState, useEffect, memo } from 'react';
+## 3. Please fix, optimize, and/or modify the component as much as you think is necessary.
+```import React, { useState, useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
 
 // Single List Item
@@ -101,4 +100,4 @@ WrappedListComponent.defaultProps = {
 
 const List = memo(WrappedListComponent);
 
-export default List;
+export default List;```
